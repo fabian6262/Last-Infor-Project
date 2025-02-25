@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faz Coffee - Brew Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        .navbar .nav-items {
+            list-style: none;
+            display: flex;
+        }
+        .navbar .nav-items li {
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+        .navbar .nav-items a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .navbar .nav-items a:hover {
+            color: #000;
+        }
+        .brew-guide {
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .brew-guide h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .brew-guide p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #666;
+        }
+        .brew-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .brew-card {
+            width: 50%;
+            text-align: left;
+        }
+        .brew-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .brew-card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        .brew-card .btn {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            border: 1px solid #000;
+            padding: 5px 10px;
+        }
+        .brew-card .btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">Faz Coffee</div>
+        <ul class="nav-items">
+            <li><a href="index.html">Coffee</a></li>
+            <li><a href="brewguide.html">Brew Guide</a></li>
+            <li><a href="#">Coffee Analyzer</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="#">Locations</a></li>
+        </ul>
+    </nav>
+
+    <section class="brew-guide">
+        <h2>Brew Guide & Recipes</h2>
+        <p>Here's a collection of brew guides that we’ve put together to show you how to make great coffee at home.</p>
+        <div class="brew-container">
+            <div class="brew-card">
+                <img src="th (5).jpeg" alt="Espresso Machine">
+                <h3>How to Make Espresso Coffee</h3>
+                <a href="rep.html" class="btn">Get the Recipe</a>
+            </div>
+            <div class="brew-card">
+                <img src="hairo-v60-brew-guide.png" alt="Pour Over Coffee">
+                <h3>How to Make Pour Over Coffee</h3>
+                <a href="#" class="btn">Get the Recipe</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
