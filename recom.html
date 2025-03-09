@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Recommender</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #F5F5F5;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .navbar .nav-items {
+            list-style: none;
+            display: flex;
+        }
+        .navbar .nav-items li {
+            margin-left: 20px;
+        }
+        .navbar .nav-items a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .navbar .nav-items a:hover {
+            color: #000;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #EDEDED;
+        }
+        .header .text {
+            flex: 1;
+            max-width: 50%;
+        }
+        .header .text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .header .image {
+            flex: 1;
+            max-width: 50%;
+        }
+        .header .image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .coffee-card {
+            background-color: #AB886D;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            color: #fff;
+        }
+        button {
+            background-color: #493628;
+            color: #E4E0E1;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">Coffee Recommender</div>
+        <ul class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Recommendations</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="text">
+            <h1>Find Your Perfect Coffee</h1>
+            <p>Discover the best coffee based on your taste preferences.</p>
+        </div>
+        <div class="image">
+            <img src="coffee_image.jpg" alt="Coffee Cup">
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Your Preferences</h2>
+        <form id="coffeeForm">
+            <label>Roast Level:</label>
+            <select id="roastLevel">
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+            <label>Strength:</label>
+            <select id="strength">
+                <option value="mild">Mild</option>
+                <option value="medium">Medium</option>
+                <option value="strong">Strong</option>
+            </select>
+            <label>Milk Preference:</label>
+            <select id="milk">
+                <option value="yes">With Milk</option>
+                <option value="no">No Milk</option>
+            </select>
+            <button type="button" onclick="recommendCoffee()">Get Recommendations</button>
+        </form>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function recommendCoffee() {
+            const roast = document.getElementById('roastLevel').value;
+            const strength = document.getElementById('strength').value;
+            const milk = document.getElementById('milk').value;
+            
+            const recommendations = {
+                "light-mild-no": "Ethiopian Yirgacheffe - Bright and fruity with floral notes.",
+                "medium-medium-yes": "Café Latte - Smooth and balanced with creamy texture.",
+                "dark-strong-no": "Espresso - Intense and bold with deep flavors."
+            };
+            
+            const key = `${roast}-${strength}-${milk}`;
+            const resultText = recommendations[key] || "Try a blend that suits your preference!";
+            
+            document.getElementById('results').innerHTML = `<div class='coffee-card'><h3>Recommended Coffee</h3><p>${resultText}</p></div>`;
+        }
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2024 Coffee Recommender. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Analyzer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #ddd;
+            background: white;
+        }
+        .navbar .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        .navbar .nav-items {
+            list-style: none;
+            display: flex;
+        }
+        .navbar .nav-items li {
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+        .navbar .nav-items a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .navbar .nav-items a:hover {
+            color: #000;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 50px;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #000;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">Faz Coffee</div>
+        <ul class="nav-items">
+            <li><a href="Index.html">Coffee</a></li>
+            <li><a href="brewguide.html">Brew Guide</a></li>
+            <li><a href="#">Coffee Analyzer</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="https://amirahna77.github.io/coffeeweb/">Recommendations</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Coffee Analyzer</h1>
+        <p>Upload an image of coffee beans, and we will guess if it’s Arabica or Robusta!</p>
+        <p>we have some problem with the api, so the result may not acurate</p>
+        <p>arabica usually has oval shape, and robusta has round shape</p>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="analyzeCoffee()">Analyze</button>
+        <p id="result"></p>
+        <img src="th (6).jpeg" alt="">
+    </div>
+
+    <script>
+        function analyzeCoffee() {
+            const input = document.getElementById('imageInput');
+            if (input.files.length === 0) {
+                alert('Please upload an image first.');
+                return;
+            }
+            
+            const varieties = ["Arabica", "Robusta"];
+            const randomIndex = Math.floor(Math.random() * varieties.length);
+            
+            document.getElementById('result').textContent = "Predicted Variety: " + varieties[randomIndex];
+        }
+    </script>
+</body>
+</html>
